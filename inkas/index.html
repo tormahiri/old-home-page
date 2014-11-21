@@ -1,0 +1,133 @@
+<html ng-app="jsonapp">
+  <head>
+
+	<meta charset="utf8"></meta>
+  <meta charset ="utf-8"name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+ <link href="../css/style.css" rel="stylesheet" media="screen">
+    <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+
+	  
+	 <script type="text/javascript" src="../css/angular.js" ></script>
+ <script type="text/javascript"src="../js/home.js" ></script>
+		<script type="text/javascript" src="js/bedit.js"></script>
+	
+	 		<script language="JavaScript"> 
+  attachAll = true ; 
+ 
+  bedit_deny = "list-input" ;
+</script>
+		<style>
+		
+		textarea{
+		width:100%;
+		}
+		</style>
+		<script src="js/parse.js"></script>
+		  <script src="js/jquery.js"></script>
+	
+		<script>
+
+$(document).ready(function(){
+
+$("#awat").click(function(){
+var esmi=$("#kirguz").val();
+var kimmat=$("#inputEmails").val();
+if(kimmat=="" || kirguz==""){
+alert("ئىنكاس يىزىپ ئاندىن يوللاڭ");
+}else{
+
+			Parse.initialize("hSNY3qCUgP6jYeb3dwG53huAGGd8YEHugCAjdgGR", "YQweurkNQQi0ZUrWVEzWgRcmLAzYmg1WDU2v2Sry");
+			var inkas = Parse.Object.extend("inkas");
+var testObject = new inkas();
+testObject.save({esmi:esmi,mazmun:kimmat}, {
+  success: function(object) {
+$("#uqur").fadeIn(100).delay(5000).fadeOut(1000);
+$("#uqur").text("مۇۋەپپىقيەتلىك يوللاندى!");
+  },
+  error: function(model, error) {
+				alert("يوللانمىدى!");
+				
+			}
+			
+});
+}
+
+});
+
+
+});
+</script>
+
+
+    <script src="js/bootstrap.min.js"></script>
+    <style type="text/css">
+
+	#content{
+       margin-top: 5px;
+		
+		height: auto;
+		text-align: right;
+	
+
+	}
+	.inkas{
+		padding: 100px;
+	}
+	.alert{
+		font-size: 20px;
+	}
+
+</style>
+  </head>
+  <body  ng-controller="baxtima">
+ <div class="tezimlik">
+    <ul class="nav nav-pills" role="tablist">
+  <li role="presentation" ><a href="../index.html">باش بەت</a></li>
+  <li role="presentation"><a href="../makala.html">ماقالە</a></li>
+  <li role="presentation"><a href="../daris.html">دەرس</a></li>
+  <li role="presentation" class="active"><a href="index.html">تەكلىپ</a></li>
+ 
+</ul>
+  </div>
+  <div class="header">
+
+<h2>{{headinfo}}</h2>
+  </div>
+<div class="container" class="inkas">
+<form style="margin-bottom: 30px;
+margin-top: 30px;">
+<div class="alert alert-info">
+باشقا پىكىر تەلەپ ياكى تەكلىپىڭىز بولسا ئىنكاس قالدۇرڭ
+</div>
+<hr>
+<label>ئىسمىڭىز</label>
+
+
+</br>
+<input type="text" id="kirguz"></input></br>
+<label>مەزمۇن</label>
+</br>
+<textarea rows="4"    id="inputEmails"></textarea></br>
+<hr>
+   <label class="label label-success" id="uqur" style="display:none;"></label>
+ <button class="btn btn-primary" type="button" id="awat">ئەۋەتىش</button>
+
+</form>
+<div id="content"></div>
+
+</div>
+
+<div class="footer">
+    <p class="asti">
+ <tormahiri></tormahiri>
+
+    </p>
+
+  </div>
+	
+
+
+  </body>
+</html>

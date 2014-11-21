@@ -1,0 +1,83 @@
+
+
+  <html ng-app="jsonapp">
+  <head>
+  <meta charset ="utf-8"name="viewport" content="width=device-width, initial-scale=1">
+
+  	<title>tormahiri</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <style type="text/css">
+
+    </style>
+   <script type="text/javascript" src="css/angular.js" ></script>
+   <script type="text/javascript"src="daris.js" ></script>
+
+
+  </head>
+  <body ng-controller="myapp" ng-init="getItems() |orderBy:createdAt"> 
+    
+<div class="tezimlik">
+    <ul class="nav nav-pills" role="tablist">
+    <li role="presentation" ><a href="index.html">باش بەت</a></li>
+     <li role="presentation"><a href="http://tormahiri.github.io/blog" target="_blank">ماقالە</a></li>
+    <li role="presentation" class="active"><a href="daris.html">دەرس</a></li>
+    <li role="presentation"><a href="http://tormahiri.github.io/js"target="_blank">jsقوللانمىسى</a></li>
+    <li role="presentation"><a href="inkas/index.html">تەكلىپ</a></li>
+   
+  </ul>
+    </div>
+    <div class="header">
+
+  <h2>{{headinfo}}</h2>
+    </div>
+
+  <div class="jumbotron">
+<p>
+ {{about}}
+</p>
+  </div>
+  <div class="container" ng-repeat="item in items |orderBy:createdAt  | startFrom:currentPage*pageSize | limitTo:pageSize">
+   
+
+  <div class="title">
+    <p class="tima">
+
+  {{item.title}}
+    </p>
+  </div>
+  <p class="mezmun">
+    {{item.desc }}
+   <hr>
+
+  </p>
+  <a href="{{item.down}}" class="download">{{download}} <span class="badge">{{item.number}}</span></a>
+  </div>
+         <center>
+          <div class="konupka">
+    <button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1"class="btn btn-danger">
+         ئالدىنقىسى
+      </button>
+
+      <button ng-disabled="currentPage >= items.length/pageSize - 1" ng-click="currentPage=currentPage+1" class="btn btn-danger">
+         كىينكىسى
+      </button>
+          </center>
+  </div>
+  </div>
+  <ng-view></ng-view>
+    
+
+
+
+
+
+    <div class="footer">
+      <p class="asti">
+  <tormahiri></tormahiri
+
+      </p>
+
+    </div>
+  </body>
+  </html>

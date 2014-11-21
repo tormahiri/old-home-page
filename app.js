@@ -1,0 +1,36 @@
+var app=angular.module("jsonapp",[]);
+
+
+app.directive("tormahiri",function(){
+
+return{
+	restrict:'E',
+	template:'بارلىق ھوقۇق تورماھىرىغا مەنسۇپ'
+}
+});
+ function myapp($scope,$http,$rootScope){
+ 	$rootScope.headinfo="تورماھىرى تېخنىكا تورى"
+    $scope.currentPage = 0;
+    $scope.pageSize = 3;
+	$scope.items = [];
+	$scope.getItems = function() {
+		$http({method : 
+			'GET',url : 
+			'https://api.parse.com/1/classes/turlar',
+			 headers: { 'X-Parse-Application-Id':'hSNY3qCUgP6jYeb3dwG53huAGGd8YEHugCAjdgGR', 'X-Parse-REST-API-Key':'2rkTaxHnBJbKZvJsDmqdl4kHhqTI8QP9rzaFpPDi'}})
+		.success(function(data, status) {
+		
+			$scope.items = data.results;
+		
+		});
+	};
+
+	};
+
+	app.filter('startFrom', function() {
+    return function(input, start) {
+        start = +start; //parse to int
+        return input.slice(start);
+    }
+
+});

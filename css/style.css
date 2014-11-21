@@ -1,0 +1,162 @@
+  /*
+
+tormahiri
+  */
+  @font-face{
+  	font-family: ukij tuz;
+  }
+  *{
+  	font-family: ukij tuz;
+    margin:0;
+    padding: 0;
+
+  }
+  body{
+    font-family: ukij tuz;
+
+    direction: rtl;
+    overflow-x:hidden;
+
+  }
+  .tezimlik ul{
+
+   display: inline-block;
+   margin-right: 10%;
+
+
+ }
+
+ .aelement{
+  font-size: 20px;
+  padding: 30px;
+  direction: rtl;
+  text-decoration:none;
+  background-color:#59ABE3;
+
+  text-align:right;
+  border-radius:3px;
+  border:3px;
+  color: white;
+
+
+}
+.aelement:hover{
+ text-decoration:none;
+ background-color:#22A7F0;
+
+ border-bottom:3px solid #03A678;
+ border-radius: 3px;
+}
+.title{
+  background-color:#3498DB;
+  padding: 10px;
+  border-radius: 4px;
+  border-left: 4px solid gray;
+  border-right: 4px solid gray;
+  text-align: center;
+  font-weight: bold;
+  width: 100%;
+
+
+}
+.mezmun{
+
+  padding: 50px;
+  border-radius: 4px;
+  border-left: 4px solid gray;
+  border-right:4px solid gray;
+  border:5px medium red;
+  font-family: ukij tuz;
+  font-size: 18px;
+
+
+
+
+}
+.header{
+
+  background-color:#3498DB;
+  padding: 30px;
+  position: relative;
+  top: 15px;
+  margin: 0 auto;
+  width: 100%;
+
+  margin-bottom: 15px;
+
+  border-top:5px solid orange;
+
+
+
+
+}
+.footer{
+
+  padding: 40px;
+  margin: 0 auto;
+  width: 100%;
+  background-color:#3498DB;
+  border-top:5px solid orange;
+
+
+}
+.tima{
+  font-weight: bold;
+  font-size: 20px;
+}
+.asti{
+  font-size: 20px;
+  text-align: center;
+
+}
+pre{
+
+  direction: ltr;
+  text-align: left;
+}
+#info {
+
+  background-color:#875F9A;
+
+  -webkit-column-count: 3; /* Chrome, Safari, Opera */
+  -moz-column-count: 3; /* Firefox */
+  column-count: 3;
+  box-shadow: 15px 0px 15px orange;
+  margin-bottom: 10px;
+
+}
+.inner_info{
+  color: white;
+  font-size: 20px;
+}
+a.download{
+  font-size: 22px;
+}
+.rasim{
+
+  float: right;
+  width: 120px;
+  height: 100px;
+  shape-outside:ellipse();
+  margin-bottom: 10px;
+  border-radius: 50%;
+
+}
+p.mazmunlar{
+  font-size: 20px;
+  font-family: ukij tuz;
+ border-top:2px  solid yellowgreen;
+  border-radius: 5px;
+
+}
+p.mazmunlar:hover{
+
+ 
+
+}
+
+div.container{
+  padding: 10px;
+
+
+}
